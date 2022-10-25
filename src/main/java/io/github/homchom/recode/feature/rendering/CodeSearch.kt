@@ -16,6 +16,9 @@ val FCodeSearch = feature("Code Search") {
             if (blockEntity is SignBlockEntity) {
                 if (DFInfo.currentState.getMode() == LegacyState.Mode.DEV && mc.player!!.isCreative) {
                     if (CodeSearcher.isSignMatch(blockEntity)) {
+                        CodeSearcher.occurrenceCountInFrame++
+                        //CodeSearcher.occurrencesInFrame.add(blockEntity.getBlockPos())
+
                         val distance = sqrt(
                             blockEntity.getBlockPos()
                                 .distSqr(mc.cameraEntity!!.blockPosition())

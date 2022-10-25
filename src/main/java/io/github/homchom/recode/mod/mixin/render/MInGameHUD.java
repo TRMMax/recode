@@ -27,6 +27,8 @@ public class MInGameHUD {
             tr.draw(stack, Component.literal("Searching for usages of " +
                     CodeSearcher.searchType.getSignText().get(0) + ": " + CodeSearcher.searchValue
             ), 4, 4, 0xffffff);
+            tr.draw(stack, Component.literal("Occurrences within render range: " + CodeSearcher.occurrenceCountInFrame), 4, 14, 0xffffff);
+            CodeSearcher.occurrenceCountInFrame = 0;
         }
 
         if (Config.getBoolean("plotInfoOverlay")) {

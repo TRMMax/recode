@@ -2,6 +2,7 @@ package io.github.homchom.recode.mod.features.commands;
 
 import io.github.homchom.recode.sys.renderer.ToasterUtil;
 import net.minecraft.client.gui.components.toasts.SystemToast;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 
 import java.util.*;
@@ -9,6 +10,8 @@ import java.util.*;
 public class CodeSearcher {
     public static SearchType searchType;
     public static String searchValue;
+    public static int occurrenceCountInFrame;
+    public static ArrayList<BlockPos> occurrencesInFrame = new ArrayList<>();
 
     public static boolean isSignMatch(SignBlockEntity blockEntity) {
         if (searchType == null || searchValue == null) {
